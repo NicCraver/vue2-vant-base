@@ -5,7 +5,7 @@ import store from "@/store";
 
 import "@/style/base.less";
 // 引入vant组件
-import "@/plugin/vant";
+import "@/plugins/vant";
 
 Vue.config.productionTip = false;
 

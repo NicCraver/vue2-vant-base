@@ -1,5 +1,16 @@
 # vue2-vant-base
 
+- [x] 移动端适配
+- [x] vant 自动按需引入组件
+- [ ] 内置装饰器
+- [x] gzip打包压缩代码
+- [x] 自动删除console.log
+- [ ] 二次封装axios
+- [ ] mock
+- [ ] store
+- [ ] router
+- [ ] vue.config.js css
+
 ## 所有命令
 
 使用本框架建议使用`yarn`进行安装启动，安装`yarn`请执行 `npm install yarn -g`
