@@ -27,6 +27,14 @@ yarn add postcss-px-to-viewport -D
 
 具体配置方法 在项目根目录postcss.config.js
 
+### vant 自动按需引入组件 (推荐)
+```
+yarn add babel-plugin-import -D
+```
+具体配置在`babel.config.js`中
+
+vant 组件引入位置在src\plugin\vant.js
+
 ### 内置装饰器
 
 ### gzip打包压缩代码
