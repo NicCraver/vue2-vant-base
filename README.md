@@ -9,6 +9,13 @@
 - [ ] mock
 - [ ] store
 - [ ] router
+- [ ] filter
+- [ ] mixins
+- [ ] components
+- [ ] 404
+- [ ] VConsole
+- [ ] 自定义指令
+- [ ] 路由后退缓存 https://github.com/hezhongfeng/vue-page-stack
 - [ ] vue.config.js css
 
 ## 所有命令
