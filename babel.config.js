@@ -11,17 +11,18 @@ if (process.env.NODE_ENV === "production") {
     },
   ]);
 }
-prodPlugin.push([
-  "import",
-  {
-    libraryName: "vant",
-    libraryDirectory: "es",
-    style: true,
-  },
-  "vant",
-]);
-console.log('prodPlugin', prodPlugin)
 module.exports = {
   presets: ["@vue/cli-plugin-babel/preset"],
-  plugins: [...prodPlugin],
+  plugins: [
+    ...prodPlugin,
+    [
+      "import",
+      {
+        libraryName: "vant",
+        libraryDirectory: "es",
+        style: true,
+      },
+      "vant",
+    ],
+  ],
 };
