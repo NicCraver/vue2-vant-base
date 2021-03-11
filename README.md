@@ -71,4 +71,7 @@ vant 组件引入位置在src\plugin\vant.js
 
 ### `mock`
 
+### `store`
+引入了`super-vuex`
+
 ### 常见问题
