@@ -7,7 +7,7 @@
 - [x] 自动删除console.log
 - [ ] 二次封装axios
 - [ ] mock
-- [ ] store
+- [x] store
 - [ ] router
 - [ ] filter
 - [ ] mixins
@@ -72,6 +72,8 @@ vant 组件引入位置在src\plugin\vant.js
 ### `mock`
 
 ### `store`
-引入了`super-vuex`
+集成了缓存的vuex
+src\Examples\Vuex.vue 中有示例
+src下config.js中配置是否缓存及缓存方式
 
 ### 常见问题
