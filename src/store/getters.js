@@ -2,4 +2,5 @@
 export default {
   name: state => state.app.name,
   count: state => state.app.count,
+  todos: state => state.todo.todos,
 };

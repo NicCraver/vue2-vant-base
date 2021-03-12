@@ -7,8 +7,8 @@ if (process.env.NODE_ENV === "production") {
     "transform-remove-console",
     {
       // 保留 console.error 与 console.warn
-      exclude: ["error", "warn"],
-    },
+      exclude: ["error", "warn"]
+    }
   ]);
 }
 module.exports = {
@@ -20,9 +20,9 @@ module.exports = {
       {
         libraryName: "vant",
         libraryDirectory: "es",
-        style: true,
+        style: true
       },
-      "vant",
-    ],
-  ],
+      "vant"
+    ]
+  ]
 };

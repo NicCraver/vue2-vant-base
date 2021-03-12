@@ -19,7 +19,12 @@
           :class="{ completed: todo.completed, editing: todo == editedTodo }"
         >
           <div class="view">
-            <input class="toggle" type="checkbox" v-model="todo.completed" />
+            <input
+              class="toggle"
+              type="checkbox"
+              v-model="todo.completed"
+              @change="changeCompleted"
+            />
             <label @dblclick="editTodo(todo)">{{ todo.title }}</label>
             <button class="destroy" @click="removeTodo(todo)"></button>
           </div>
@@ -51,12 +56,12 @@
 </template>
 
 <script>
-import storage from "./local";
+import { mapGetters, mapActions } from "vuex";
 export default {
   data() {
     return {
       newTodo: "",
-      todos: this.$store.todo._state.todos,
+      todos: this.$store.getters.todos,
       editedTodo: null
     };
   },
@@ -78,23 +83,33 @@ export default {
     }
   },
   methods: {
+    ...mapActions({ setTodo: "todo/setTodo" }),
     addTodo() {
       const value = this.newTodo && this.newTodo.trim();
       if (!value) return;
-      console.log("addTodo", this.newTodo);
+      this.todos.push({
+        id: this.todos.length + 1,
+        title: value,
+        completed: false
+      });
       this.newTodo = "";
-      // 缓存里放一份
-      // this.$store.todo.push("todos", {
-      //   id: this.todos.length + 1,
-      //   title: value,
-      //   completed: false
-      // });
-      // console.log(
-      //   "this.$store.todo",
-      //   JSON.parse(JSON.stringify(this.$store.todo._state.todos))
-      // );
+      this.setTodo(this.todos);
+    },
+    changeCompleted() {
+      this.setTodo(this.todos);
+    },
+    removeTodo(todo) {
+      var index = this.todos.indexOf(todo);
+      this.todos.splice(index, 1);
+      this.setTodo(this.todos);
+    },
+    editTodo: function(todo) {
+      this.beforeEditCache = todo.title;
+      this.editedTodo = todo;
+      this.setTodo(this.todos);
     },
     doneEdit(todo) {
+      console.log("todo", todo);
       if (!this.editedTodo) {
         return;
       }
@@ -103,7 +118,7 @@ export default {
       if (!todo.title) {
         this.removeTodo(todo);
       }
-      storage.set(this.todos);
+      this.setTodo(this.todos);
     },
     cancelEdit(todo) {
       this.editedTodo = null;
@@ -111,7 +126,7 @@ export default {
     },
     removeCompleted() {
       this.todos = this.todos.filter(todo => !todo.completed);
-      storage.set(this.todos);
+      this.setTodo(this.todos);
     }
   },
   directives: {

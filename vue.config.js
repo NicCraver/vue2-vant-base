@@ -2,14 +2,14 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
-  configureWebpack: (config) => {
+  configureWebpack: config => {
     if (isProd) {
       // 配置webpack 压缩
       config.plugins.push(
         new CompressionWebpackPlugin({
           test: /\.js$|\.html$|\.css$/,
           // 超过4kb压缩
-          threshold: 4096,
+          threshold: 4096
         })
       );
     }
@@ -20,11 +20,11 @@ module.exports = {
         // 若 less-loader 版本小于 6.0，请移除 lessOptions 这一级，直接配置选项。
         lessOptions: {
           modifyVars: {
-            hack: `true; @import "~@/style/vant-ui.less";`,
-          },
-        },
-      },
-    },
+            hack: `true; @import "~@/style/vant-ui.less";`
+          }
+        }
+      }
+    }
   },
   // TODO 不太懂css
   // css: {
@@ -44,6 +44,6 @@ module.exports = {
   // },
   devServer: {
     port: 9001,
-    open: true,
-  },
+    open: true
+  }
 };
