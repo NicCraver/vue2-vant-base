@@ -84,15 +84,15 @@ export default {
       console.log("addTodo", this.newTodo);
       this.newTodo = "";
       // 缓存里放一份
-      this.$store.todo.push("todos", {
-        id: this.todos.length + 1,
-        title: value,
-        completed: false
-      });
-      console.log(
-        "this.$store.todo",
-        JSON.parse(JSON.stringify(this.$store.todo._state.todos))
-      );
+      // this.$store.todo.push("todos", {
+      //   id: this.todos.length + 1,
+      //   title: value,
+      //   completed: false
+      // });
+      // console.log(
+      //   "this.$store.todo",
+      //   JSON.parse(JSON.stringify(this.$store.todo._state.todos))
+      // );
     },
     doneEdit(todo) {
       if (!this.editedTodo) {

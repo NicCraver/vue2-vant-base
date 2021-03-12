@@ -23,6 +23,11 @@ const routes = [
     path: "/ToDoList",
     name: "ToDoList",
     component: () => import("../views/ToDoList/index.vue")
+  },
+  {
+    path: "/Examples/Vuex",
+    name: "Vuex",
+    component: () => import("../Examples/Vuex.vue")
   }
 ];
 

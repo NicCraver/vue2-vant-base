@@ -1,18 +1,33 @@
-import { SuperVuex } from "super-vuex";
-
-// 两个vuex插件，vuexPromise和vuejsStorage
-import vuexPromise from "vuex-promise";
-import vuejsStorage from "vuejs-storage";
+import Vue from "vue";
+import Vuex from "vuex";
+import getters from "./getters";
 import createPersistedState from "vuex-persistedstate";
+import { vuexStorage, localStorage } from "../config";
 
-import UserStore from "./modules/user";
-import Subs from "./modules/sub";
-import ToDoList from "./modules/todolist";
+Vue.use(Vuex);
 
-const Main = new SuperVuex();
-// 可以set多个module
-Main.setModule(UserStore, Subs, ToDoList);
-// 在SuperVuex中使用插件
-Main.setPlugin(vuexPromise, vuejsStorage);
+const plugins = [];
+// 判断是否开启vuex缓存 默认localStorage
+if (vuexStorage && !localStorage) {
+  plugins.push(createPersistedState());
+}
+// 判断是否开启localStorage 不开启则使用sessionStorage
+if (vuexStorage && localStorage) {
+  plugins.push(createPersistedState({ storage: window.sessionStorage }));
+}
 
-export default Main.init();
+const modulesFiles = require.context("./modules", true, /\.js$/);
+
+// 应该 `import app from './modules/app'` 省去引入modules
+const modules = modulesFiles.keys().reduce((modules, modulePath) => {
+  const moduleName = modulePath.replace(/^\.\/(.*)\.\w+$/, "$1");
+  const value = modulesFiles(modulePath);
+  modules[moduleName] = value.default;
+  return modules;
+}, {});
+
+export default new Vuex.Store({
+  modules,
+  getters,
+  plugins: [...plugins]
+});
