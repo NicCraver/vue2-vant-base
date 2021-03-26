@@ -1,7 +1,15 @@
 <template>
   <!-- 使用vuex的几种方式 -->
   <div>
+    <van-nav-bar
+      title="标题"
+      left-arrow
+      @click-left="onClickLeft"
+      @click-right="onClickRight"
+    />
+    <p>使用mapGetters获取vuex数据 前提是在/store/getters.js 中配置好</p>
     <h1>count: {{ count }}</h1>
+    <p>使用...mapActions 调用方法</p>
     <van-button
       @click="setCount"
       style="width:100vw;margin: 5px 0;"
@@ -9,6 +17,7 @@
     >
       mapActions
     </van-button>
+    <p>使用...mapMutations 调用方法</p>
     <van-button
       @click="SET_COUNT"
       style="width:100vw;margin: 5px 0;"
@@ -16,6 +25,7 @@
     >
       mapMutations
     </van-button>
+    <p>使用dispatch 调用方法</p>
     <van-button
       @click="Action"
       style="width:100vw;margin: 5px 0;"
@@ -23,6 +33,7 @@
     >
       Action
     </van-button>
+    <p>commit 调用方法</p>
     <van-button
       @click="Mutation"
       style="width:100vw;margin: 5px 0;"
@@ -49,6 +60,9 @@ export default {
     },
     Mutation() {
       this.$store.commit("app/SET_COUNT");
+    },
+    onClickLeft() {
+      this.$router.go(-1);
     }
   }
 };
