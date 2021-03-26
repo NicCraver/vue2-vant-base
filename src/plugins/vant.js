@@ -1,5 +1,5 @@
 import Vue from "vue";
-import {
+import {NavBar,
   Divider,
   Popup,
   Overlay,
@@ -33,6 +33,7 @@ import {
 } from "vant";
 
 Vue.use(Divider)
+  .use(NavBar)
   .use(Popup)
   .use(Overlay)
   .use(Loading)
