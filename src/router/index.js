@@ -20,14 +20,14 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/ToDoList",
+    path: "/Examples/ToDoList",
     name: "ToDoList",
-    component: () => import("../views/ToDoList/index.vue")
+    component: () => import("../Examples/ToDoList/index.vue")
   },
   {
     path: "/Examples/Vuex",
     name: "Vuex",
-    component: () => import("../Examples/Vuex.vue")
+    component: () => import("../Examples/Vuex/index.vue")
   }
 ];
 

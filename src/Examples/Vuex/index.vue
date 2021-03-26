@@ -1,12 +1,7 @@
 <template>
   <!-- 使用vuex的几种方式 -->
   <div>
-    <van-nav-bar
-      title="Vuex示例"
-      left-arrow
-      @click-left="onClickLeft"
-      @click-right="onClickRight"
-    />
+    <van-nav-bar title="Vuex示例" left-arrow @click-left="onClickLeft" />
     <div class="demo">
       <h1>count: {{ count }}</h1>
       <div class="demo-doc-block_title m-10">
@@ -72,5 +67,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "./demo.less";
+@import "../demo.less";
 </style>

@@ -13,7 +13,11 @@
       <div class="home-nav_title">基础示例</div>
       <div class="home-nav_group">
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
-        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
+        <van-cell
+          title="ToDoList"
+          is-link
+          @click="GoToPage('/Examples/ToDoList')"
+        />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
@@ -75,6 +79,9 @@ export default {
         padding-left: 20px;
         font-size: 14px;
         transition: background 0.3s;
+      }
+      .van-cell::after {
+        border-bottom: none !important;
       }
     }
   }

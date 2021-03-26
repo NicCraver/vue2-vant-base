@@ -1,7 +1,7 @@
 <template>
   <section class="todolist">
+    <van-nav-bar title="ToDoList示例" left-arrow @click-left="onClickLeft" />
     <header>
-      <h1>ToDoList</h1>
       <input
         class="new-todo"
         placeholder="What needs to be done?"
@@ -127,6 +127,9 @@ export default {
     removeCompleted() {
       this.todos = this.todos.filter(todo => !todo.completed);
       this.setTodo(this.todos);
+    },
+    onClickLeft() {
+      this.$router.go(-1);
     }
   },
   directives: {
