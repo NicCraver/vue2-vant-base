@@ -1,6 +1,6 @@
 <template>
   <section class="todolist">
-    <van-nav-bar title="ToDoList示例" left-arrow @click-left="onClickLeft" />
+    <van-nav-bar title="ToDoList示例" left-arrow @click-left="$router.go(-1)" />
     <header>
       <input
         class="new-todo"
