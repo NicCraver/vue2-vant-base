@@ -8,7 +8,7 @@
 - [ ] 二次封装axios
 - [ ] mock
 - [x] store
-- [ ] router
+- [x] router
 - [ ] filter
 - [ ] mixins
 - [ ] components

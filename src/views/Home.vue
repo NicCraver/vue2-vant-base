@@ -2,7 +2,7 @@
   <div class="home">
     <header>
       <div class="home_title">
-        <img src="https://img01.yzcdn.cn/vant/logo.png" />
+        <img src="../assets/logo.png" />
         <div class="home_title_text">Vue2-Vant-Base</div>
       </div>
       <div class="home_desc">
@@ -18,7 +18,7 @@
           is-link
           @click="GoToPage('/Examples/ToDoList')"
         />
-        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
+        <van-cell title="Axios" is-link @click="GoToPage('/Examples/Axios')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
       </div>
@@ -54,10 +54,10 @@ export default {
       "Helvetica Neue", Helvetica, Segoe UI, Arial, Roboto, "PingFang SC",
       "miui", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
     img {
-      width: 40px;
+      width: 50px;
     }
     .home_title_text {
-      margin-left: 16px;
+      margin-left: 10px;
     }
   }
   .home_desc {
