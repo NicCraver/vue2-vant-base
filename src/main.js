@@ -9,6 +9,8 @@ import CustomComponent from "./components";
 // 引入vant组件
 import "@/plugins/vant";
 
+import '@/apis/request'
+
 Vue.use(CustomComponent, {});
 
 Vue.config.productionTip = false;
