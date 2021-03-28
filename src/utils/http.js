@@ -10,7 +10,9 @@ axios.defaults.timeout = 10000;
 // const baseURL = 'http://rap2.taobao.org:38080/app/mock/262203/'
 // const baseURL = 'http://192.168.198.217:28769'
 
-const baseURL = process.env.VUE_APP_BASE_URL;
+// const baseURL = process.env.VUE_APP_BASE_URL;
+console.log(`process.env`, process.env);
+const baseURL = "";
 const timeout = 6000;
 // http 说明表
 const ERROR_MSG = {
@@ -24,19 +26,19 @@ const ERROR_MSG = {
   503: "服务不可用(503)",
   504: "网络超时(504)"
 };
-
+const instance = axios.create({
+  baseURL,
+  timeout,
+  headers: {
+    "Content-Type": "application/json;charset=UTF-8"
+  }
+});
 // 请求拦截器 添加token， 判断登录之类操作
 instance.interceptors.request.use(
   config => {
-    if (process.env.NODE_ENV === "development") {
-      const url = config.url;
-      if (mockMatch(url)) {
-        config.baseURL = mockURL;
-      }
-    }
-
     // 在这里做认证，可以从store里面获取token
     // config.headers['Authorization'] = `Bearer ${store.getters.getAccessToken}`
+    config.headers["Authorization"] = "token";
 
     // 如果get  请求有缓存，可以加这段代码
     if (config.method === "get") {
@@ -73,41 +75,35 @@ const request = (options = {}) => {
   return new Promise((resolve, reject) => {
     instance(options)
       .then(({ data, status, statusText }) => {
-        if (status === 200) {
+        // 如果后台使用data.code 进行判断 则在这里修改判断条件
+        if (status === 200 || status === 201) {
           resolve(data);
         } else {
           reject(statusText);
         }
       })
       .catch(result => {
+        // todo
         if (!result || !result.response) {
           reject(result);
         }
         const {
           response: { status, statusText, data = {} }
         } = result;
-        switch (status) {
-          // 未登录
-          case 401:
-            sessionStorage.clear();
-            reject("您还未登录");
-            break;
-          case 403:
-            reject("登录失效");
-            break;
-          case 404:
-            reject("访问异常，请联系系统管理员");
-            // 请求丢失
-            break;
-          default:
-            reject(data.message || statusText);
-            break;
+        if (status === 401) {
+          // 清空数据
+          sessionStorage.clear();
+          reject("登录失效过期，请重新登录");
+        } else if (status) {
+          reject(ERROR_MSG[status], data.message, statusText);
+        } else {
+          reject(data.message || statusText);
         }
       });
   });
 };
 
-export const get = (url, params = {}) => {
+const get = (url, params = {}) => {
   return request({
     url,
     method: "get",
@@ -115,7 +111,7 @@ export const get = (url, params = {}) => {
   });
 };
 
-export const put = (url, data = {}) => {
+const put = (url, data = {}) => {
   return request({
     url,
     method: "put",
@@ -123,7 +119,7 @@ export const put = (url, data = {}) => {
   });
 };
 
-export const post = (url, data = {}) => {
+const post = (url, data = {}) => {
   return request({
     url,
     method: "post",
@@ -131,10 +127,12 @@ export const post = (url, data = {}) => {
   });
 };
 
-export const del = (url, data = {}) => {
+const del = (url, data = {}) => {
   return request({
     url,
     method: "delete",
     data
   });
 };
+
+export { request, get, post, put, del };
