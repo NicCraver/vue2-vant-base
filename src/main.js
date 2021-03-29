@@ -9,9 +9,15 @@ import CustomComponent from "./components";
 // 引入vant组件
 import "@/plugins/vant";
 
+// apis
+import api from "@/apis";
+
 Vue.use(CustomComponent, {});
 
 Vue.config.productionTip = false;
+
+// 原型链挂载
+Vue.prototype.$api = api;
 
 new Vue({
   router,

@@ -13,7 +13,7 @@ axios.defaults.timeout = 10000;
 // const baseURL = process.env.VUE_APP_BASE_URL;
 console.log(`process.env`, process.env);
 const baseURL = "";
-const timeout = 6000;
+const timeout = 30000;
 // http 说明表
 const ERROR_MSG = {
   400: "请求错误(400)",
