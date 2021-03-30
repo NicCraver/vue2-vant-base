@@ -5,8 +5,8 @@
 - [ ] 内置装饰器
 - [x] gzip打包压缩代码
 - [x] 自动删除console.log
-- [X] 二次封装axios
-- [ ] mock
+- [x] 二次封装axios
+- [x] mock
 - [x] store
 - [x] router
 - [ ] filter
