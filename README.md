@@ -74,6 +74,6 @@ vant 组件引入位置在src\plugin\vant.js
 ### `store`
 集成了缓存的vuex
 src\Examples\Vuex.vue 中有示例
-src下config.js中配置是否缓存及缓存方式
+src下`config.js`中有配置是否缓存及缓存方式
 
 ### 常见问题
