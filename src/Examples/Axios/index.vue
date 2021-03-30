@@ -40,7 +40,8 @@ import {
   postDemoData,
   putDemoData,
   delDemoData,
-  uploaderDemoData
+  uploaderDemoData,
+  getUser
 } from "@/apis/demo";
 export default {
   data() {
@@ -91,7 +92,7 @@ export default {
     async getFun() {
       this.$toast.loading("加载中...");
       try {
-        const res = await getDemoData();
+        const res = await getUser();
         console.log(`res`, res);
       } catch (error) {
         console.error(`error`, error);

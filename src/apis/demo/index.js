@@ -9,7 +9,7 @@ export const getDemoData = (params = {}) => {
 };
 export const postDemoData = data => {
   return request({
-    url: "http://jsonplaceholder.typicode.com/photos",
+    url: "/list",
     method: "post",
     data
   });
@@ -32,6 +32,14 @@ export const uploaderDemoData = data => {
   return request({
     url: "https://httpbin.org/post",
     method: "post",
+    data
+  });
+};
+
+export const getUser = data => {
+  return request({
+    url: "/getUser",
+    method: "get",
     data
   });
 };
