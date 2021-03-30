@@ -1,33 +1,22 @@
+// 此文件mock接口对应 mock/modules/demo.js
 import request from "@/utils/request";
 
+// url为mock 模块中定义的url
 export const getDemoData = (params = {}) => {
   return request({
-    url: "http://jsonplaceholder.typicode.com/albums",
+    url: "/getList",
     method: "get",
     params: params
   });
 };
 export const postDemoData = data => {
   return request({
-    url: "/list",
+    url: "/postList",
     method: "post",
     data
   });
 };
-export const putDemoData = data => {
-  return request({
-    url: "https://jsonplaceholder.typicode.com/posts/1",
-    method: "put",
-    data
-  });
-};
-export const delDemoData = data => {
-  return request({
-    url: "https://jsonplaceholder.typicode.com/posts/1",
-    method: "delete",
-    data
-  });
-};
+
 export const uploaderDemoData = data => {
   return request({
     url: "https://httpbin.org/post",
@@ -36,10 +25,11 @@ export const uploaderDemoData = data => {
   });
 };
 
-export const getUser = data => {
+// 登录失败示例
+export const loginFail = data => {
   return request({
-    url: "/getUser",
-    method: "get",
+    url: "/loginFail",
+    method: "post",
     data
   });
 };

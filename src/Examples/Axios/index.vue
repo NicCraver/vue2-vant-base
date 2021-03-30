@@ -2,34 +2,32 @@
   <div>
     <van-nav-bar title="ToDoList示例" left-arrow @click-left="$router.go(-1)" />
     <div class="demo">
+      <!-- GTE -->
       <div class="demo-doc-block_title m-10">
         GTE & loading 示例
       </div>
       <van-button @click="getFun" type="primary">
         GTE & loading
       </van-button>
+      <!-- POST -->
       <div class="demo-doc-block_title m-10">
         POST示例
       </div>
       <van-button @click="postFun" type="primary">
         POST
       </van-button>
-      <div class="demo-doc-block_title m-10">
-        PUT示例
-      </div>
-      <van-button @click="putFun" type="primary">
-        PUT
-      </van-button>
-      <div class="demo-doc-block_title m-10">
-        DEL示例
-      </div>
-      <van-button @click="delFun" type="primary">
-        DEL
-      </van-button>
+      <!-- 上传示例 -->
       <div class="demo-doc-block_title m-10">
         上传示例
       </div>
       <van-uploader v-model="fileList" :after-read="afterRead" />
+      <!-- 登录失败示例 -->
+      <div class="demo-doc-block_title m-10">
+        登录失败示例
+      </div>
+      <van-button @click="loginFailFun" type="primary">
+        loginFail
+      </van-button>
     </div>
   </div>
 </template>
@@ -38,10 +36,8 @@
 import {
   getDemoData,
   postDemoData,
-  putDemoData,
-  delDemoData,
   uploaderDemoData,
-  getUser
+  loginFail
 } from "@/apis/demo";
 export default {
   data() {
@@ -73,17 +69,10 @@ export default {
     },
     async allLoadData() {
       try {
-        const [get, post, put, del] = await Promise.all([
-          getDemoData(),
-          postDemoData(),
-          putDemoData({ title: "foo111", body: "bar", userId: 1 }),
-          delDemoData()
-        ]);
-        console.group("res");
+        const [get, post] = await Promise.all([getDemoData(), postDemoData()]);
+        console.group("allLoadData");
         console.log(`get`, get);
         console.log(`post`, post);
-        console.log(`put`, put);
-        console.log(`del`, del);
         console.groupEnd();
       } catch (error) {
         console.error(`error`, error);
@@ -92,8 +81,8 @@ export default {
     async getFun() {
       this.$toast.loading("加载中...");
       try {
-        const res = await getUser();
-        console.log(`res`, res);
+        const res = await getDemoData();
+        console.log(`getFun`, res);
       } catch (error) {
         console.error(`error`, error);
       } finally {
@@ -104,27 +93,15 @@ export default {
     async postFun() {
       try {
         const res = await postDemoData({ id: 42 });
-        console.log(`res`, res);
+        console.log(`postFun`, res);
       } catch (error) {
         console.error(`error`, error);
       }
     },
-    async putFun() {
+    async loginFailFun() {
       try {
-        const res = await putDemoData({
-          title: "foo111",
-          body: "bar",
-          userId: 1
-        });
-        console.log(`res`, res);
-      } catch (error) {
-        console.error(`error`, error);
-      }
-    },
-    async delFun() {
-      try {
-        const res = await delDemoData();
-        console.log(`res`, res);
+        const res = await loginFail();
+        console.log(`loginFailFun`, res);
       } catch (error) {
         console.error(`error`, error);
       }

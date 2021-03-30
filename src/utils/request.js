@@ -37,9 +37,9 @@ service.interceptors.response.use(
 
   response => {
     const res = response.data;
-    if (response.status !== 200 && response.status !== 201) {
-      Toast.fail(res.mgs || "服务器异常");
-      if (response.status === 401) {
+    if (res.code !== 20000) {
+      Toast.fail(res.msg || "服务器异常");
+      if (res.code === 401) {
         // to login
       }
       return Promise.reject(res);
