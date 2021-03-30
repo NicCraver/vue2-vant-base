@@ -102,11 +102,7 @@ export default {
     },
     async postFun() {
       try {
-        const res = await postDemoData({
-          title: "foo",
-          body: "bar",
-          userId: 1
-        });
+        const res = await postDemoData({ id: 42 });
         console.log(`res`, res);
       } catch (error) {
         console.error(`error`, error);

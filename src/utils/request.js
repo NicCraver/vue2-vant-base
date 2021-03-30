@@ -1,9 +1,6 @@
 import axios from "axios";
 import { Toast } from "vant";
 import { printANSI, printInfo } from "./screenLog";
-// import { MessageBox, Message } from 'element-ui'
-// import store from '@/store'
-// import { getToken } from '@/utils/auth'
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -39,28 +36,21 @@ service.interceptors.response.use(
    */
 
   response => {
-    console.log(`response`, response);
     const res = response.data;
-
-    // if the custom code is not 20000, it is judged as an error.
     if (response.status !== 200 && response.status !== 201) {
-      // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
-      // todo
-      if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
+      Toast.fail(res.mgs || "服务器异常");
+      if (response.status === 401) {
+        // to login
       }
-      console.log(`222`, 222);
-      return Promise.reject(new Error(response.statusText || "Error"));
+      return Promise.reject(res);
     } else {
-      // printInfo(response.config.url, res);
-      // printANSI();
-      printInfo(response.config.url, res);
       return res;
     }
   },
   error => {
     console.log("err" + error); // for debug
+    Toast.fail(error.mgs || "服务器异常");
     return Promise.reject(error);
   }
 );
-
 export default service;

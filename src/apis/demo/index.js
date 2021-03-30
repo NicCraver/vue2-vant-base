@@ -9,7 +9,7 @@ export const getDemoData = (params = {}) => {
 };
 export const postDemoData = data => {
   return request({
-    url: "https://jsonplaceholder.typicode.com/posts",
+    url: "http://jsonplaceholder.typicode.com/photos",
     method: "post",
     data
   });
