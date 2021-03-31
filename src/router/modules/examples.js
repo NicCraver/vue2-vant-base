@@ -28,5 +28,11 @@ export default [
     name: "Filters",
     component: () => import("@/Examples/Filters/index.vue"),
     meta: { title: "Axios" }
+  },
+  {
+    path: "/Examples/Mixins",
+    name: "Mixins",
+    component: () => import("@/Examples/Mixins/index.vue"),
+    meta: { title: "Axios" }
   }
 ];

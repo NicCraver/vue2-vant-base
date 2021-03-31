@@ -25,8 +25,16 @@
           is-link
           @click="GoToPage('/Examples/BaseComponents')"
         />
-        <van-cell title="Filters" is-link @click="GoToPage('/Examples/Filters')" />
-        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
+        <van-cell
+          title="Filters"
+          is-link
+          @click="GoToPage('/Examples/Filters')"
+        />
+        <van-cell
+          title="Mixins"
+          is-link
+          @click="GoToPage('/Examples/Mixins')"
+        />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
       </div>
