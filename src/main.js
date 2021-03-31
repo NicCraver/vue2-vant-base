@@ -17,6 +17,7 @@ if (process.env.VUE_APP_MOCK && process.env.NODE_ENV === "development") {
   require("../mock");
 }
 
+// 注册全局 filters
 import filters from "@/filters";
 filters(Vue);
 
