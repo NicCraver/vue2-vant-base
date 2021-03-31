@@ -21,6 +21,9 @@ if (process.env.VUE_APP_MOCK && process.env.NODE_ENV === "development") {
 import filters from "@/filters";
 filters(Vue);
 
+// 注册全局自定义指令
+import "@/directives";
+
 import { printANSI } from "@/utils/screenLog";
 printANSI();
 Vue.use(CustomComponent, {});

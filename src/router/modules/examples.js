@@ -40,5 +40,11 @@ export default [
     name: "Lodash",
     component: () => import("@/Examples/Lodash/index.vue"),
     meta: { title: "Lodash" }
+  },
+  {
+    path: "/Examples/Directives",
+    name: "Directives",
+    component: () => import("@/Examples/Directives/index.vue"),
+    meta: { title: "Directives" }
   }
 ];
