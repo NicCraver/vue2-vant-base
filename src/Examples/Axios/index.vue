@@ -2,33 +2,27 @@
   <div>
     <van-nav-bar title="ToDoList示例" left-arrow @click-left="$router.go(-1)" />
     <div class="demo">
-      <div class="demo-doc-block_title m-10">
-        <p>相关接口都在/src/apis/demo.js 中</p>
-        <p>相关mock接口都 /mock/modules/demo.js 中</p>
-      </div>
+      <DocTitle>
+        <template #title>
+          <p>相关接口都在/src/apis/demo.js 中</p>
+          <p>相关mock接口都 /mock/modules/demo.js 中</p>
+        </template>
+      </DocTitle>
       <!-- GTE -->
-      <div class="demo-doc-block_title m-10">
-        GTE & loading 示例
-      </div>
+      <DocTitle docTitle="GTE & loading 示例" />
       <van-button @click="getFun" type="primary">
         GTE & loading
       </van-button>
       <!-- POST -->
-      <div class="demo-doc-block_title m-10">
-        POST示例
-      </div>
+      <DocTitle docTitle="POST示例" />
       <van-button @click="postFun" type="primary">
         POST
       </van-button>
       <!-- 上传示例 -->
-      <div class="demo-doc-block_title m-10">
-        上传示例
-      </div>
+      <DocTitle docTitle="上传示例" />
       <van-uploader v-model="fileList" :after-read="afterRead" />
       <!-- 登录失败示例 -->
-      <div class="demo-doc-block_title m-10">
-        登录失败示例
-      </div>
+      <DocTitle docTitle="登录失败示例" />
       <van-button @click="loginFailFun" type="primary">
         loginFail
       </van-button>

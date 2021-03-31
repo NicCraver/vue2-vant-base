@@ -5,12 +5,13 @@
         <img src="../assets/logo.png" />
         <div class="home_title_text">Vue2-Vant-Base</div>
       </div>
-      <div class="home_desc">
-        基于vant封装的开箱即用框架
-      </div>
+      <DocTitle
+        docTitle="基于vant封装的开箱即用框架"
+        style="margin: 0 0 30px 25px;"
+      />
     </header>
     <main class="home-nav">
-      <div class="home-nav_title">基础示例</div>
+      <DocTitle docTitle="基础示例" style="margin: 24px 0 8px 16px;" />
       <div class="home-nav_group">
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell
@@ -19,7 +20,11 @@
           @click="GoToPage('/Examples/ToDoList')"
         />
         <van-cell title="Axios" is-link @click="GoToPage('/Examples/Axios')" />
-        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
+        <van-cell
+          title="Base Components"
+          is-link
+          @click="GoToPage('/Examples/BaseComponents')"
+        />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
       </div>
     </main>
@@ -60,17 +65,7 @@ export default {
       margin-left: 10px;
     }
   }
-  .home_desc {
-    margin: 0 0 40px 25px;
-    color: rgba(69, 90, 100, 0.6);
-    font-size: 14px;
-  }
   .home-nav {
-    .home-nav_title {
-      margin: 24px 0 8px 16px;
-      color: rgba(69, 90, 100, 0.6);
-      font-size: 14px;
-    }
     .home-nav_group {
       .van-cell {
         border-radius: 99px;
