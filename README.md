@@ -15,7 +15,7 @@
 - [x] 全局 base components
 - [x] 404
 - [ ] VConsole
-- [ ] 自定义指令
+- [x] 自定义指令 Directives
 - [ ] 路由后退缓存 https://github.com/hezhongfeng/vue-page-stack
 - [ ] vue.config.js css
 
