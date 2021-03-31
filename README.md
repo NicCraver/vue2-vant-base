@@ -80,6 +80,15 @@ yarn add babel-plugin-transform-remove-console -D
 
 ### `mock`
 
+mock 文件夹中按功能模块维护 mockapi，/src/api 中使用 mockapi 返回接口数据
+详细示例在 /src/Examples/Axios 中
+
+### 全局 base components
+
+Base 组件维护在 /src/components/base 中
+/src/components/index.js 中 将 components 文件夹下的组件注册到全局
+注意：1.组件名称必须首字母大写 2.组件内部必须有 name 属性
+
 ### `store`
 
 集成了缓存的 vuex
