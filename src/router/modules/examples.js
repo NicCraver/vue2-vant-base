@@ -22,5 +22,11 @@ export default [
     name: "BaseComponents",
     component: () => import("@/Examples/BaseComponents/index.vue"),
     meta: { title: "Axios" }
+  },
+  {
+    path: "/Examples/Filters",
+    name: "Filters",
+    component: () => import("@/Examples/Filters/index.vue"),
+    meta: { title: "Axios" }
   }
 ];

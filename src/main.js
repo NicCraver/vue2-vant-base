@@ -17,8 +17,8 @@ if (process.env.VUE_APP_MOCK && process.env.NODE_ENV === "development") {
   require("../mock");
 }
 
-import filter from "@/filter";
-filter(Vue);
+import filters from "@/filters";
+filters(Vue);
 
 import { printANSI } from "@/utils/screenLog";
 printANSI();
