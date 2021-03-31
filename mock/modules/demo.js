@@ -5,7 +5,7 @@ const getList = {
   type: "get",
   response: () => {
     return {
-      code: 20000,
+      code: 200,
       data: Mock.mock({
         "user|30-50": [
           {
@@ -20,12 +20,13 @@ const getList = {
     };
   }
 };
+
 const postList = {
   url: "/api/postList",
   type: "post",
   response: () => {
     return {
-      code: 20000,
+      code: 200,
       data: Mock.mock({
         "list|50-100": [
           {
@@ -40,6 +41,7 @@ const postList = {
     };
   }
 };
+
 const loginFail = {
   url: "/api/loginFail",
   type: "post",
