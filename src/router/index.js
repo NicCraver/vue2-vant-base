@@ -27,15 +27,6 @@ routes.push(
       component: Home,
       meta: { title: "Home" }
     },
-    // 无权限页面
-    {
-      path: "/no-permission",
-      name: "NoPermission",
-      component: () => import("@/views/error-page/no-permission/index.vue"),
-      meta: {
-        title: "访问无权限"
-      }
-    },
     // 404 页面路由
     {
       path: "*",

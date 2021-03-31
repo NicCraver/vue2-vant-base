@@ -10,9 +10,9 @@
 - [x] store
 - [x] router
 - [x] filter
-- [ ] mixins
+- [x] mixins
 - [x] 全局 base components
-- [ ] 404
+- [x] 404
 - [ ] VConsole
 - [ ] 自定义指令
 - [ ] 路由后退缓存 https://github.com/hezhongfeng/vue-page-stack
