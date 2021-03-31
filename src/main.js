@@ -17,12 +17,14 @@ if (process.env.VUE_APP_MOCK && process.env.NODE_ENV === "development") {
   require("../mock");
 }
 
-Vue.use(CustomComponent, {});
-
-Vue.config.productionTip = false;
+import filter from "@/filter";
+filter(Vue);
 
 import { printANSI } from "@/utils/screenLog";
 printANSI();
+Vue.use(CustomComponent, {});
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
