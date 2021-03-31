@@ -1,15 +1,15 @@
 export default [
   {
-    path: "/Examples/ToDoList",
-    name: "ToDoList",
-    component: () => import("@/Examples/ToDoList/index.vue"),
-    meta: { title: "ToDoList" }
-  },
-  {
     path: "/Examples/Vuex",
     name: "Vuex",
     component: () => import("@/Examples/Vuex/index.vue"),
     meta: { title: "Vuex" }
+  },
+  {
+    path: "/Examples/ToDoList",
+    name: "ToDoList",
+    component: () => import("@/Examples/ToDoList/index.vue"),
+    meta: { title: "ToDoList" }
   },
   {
     path: "/Examples/Axios",
@@ -19,7 +19,7 @@ export default [
   },
   {
     path: "/Examples/BaseComponents",
-    name: "Axios",
+    name: "BaseComponents",
     component: () => import("@/Examples/BaseComponents/index.vue"),
     meta: { title: "Axios" }
   }

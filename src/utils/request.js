@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Toast } from "vant";
-import { printANSI, printInfo } from "./screenLog";
+import { printInfo, printErr } from "./screenLog";
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -17,7 +17,7 @@ service.interceptors.request.use(
     return config;
   },
   error => {
-    console.log(error); // for debug
+    printErr(error); // for debug
     return Promise.reject(error);
   }
 );
@@ -38,17 +38,19 @@ service.interceptors.response.use(
   response => {
     const res = response.data;
     if (res.code !== 200) {
+      printErr(response.config.url, res.msg || "服务器异常");
       Toast.fail(res.msg || "服务器异常");
       if (res.code === 401) {
         // to login
       }
       return Promise.reject(res);
     } else {
+      printInfo(response.config.url, res.data);
       return res;
     }
   },
   error => {
-    console.log("err" + error); // for debug
+    printErr("err" + error); // for debug
     Toast.fail(error.mgs || "服务器异常");
     return Promise.reject(error);
   }

@@ -21,6 +21,9 @@ Vue.use(CustomComponent, {});
 
 Vue.config.productionTip = false;
 
+import { printANSI } from "@/utils/screenLog";
+printANSI();
+
 new Vue({
   router,
   render: h => h(App),
