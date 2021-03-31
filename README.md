@@ -11,7 +11,7 @@
 - [x] router
 - [ ] filter
 - [ ] mixins
-- [ ] components
+- [x] 全局 base components
 - [ ] 404
 - [ ] VConsole
 - [ ] 自定义指令
