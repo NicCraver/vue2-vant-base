@@ -2,6 +2,10 @@
   <div>
     <van-nav-bar title="ToDoList示例" left-arrow @click-left="$router.go(-1)" />
     <div class="demo">
+      <div class="demo-doc-block_title m-10">
+        <p>相关接口都在/src/apis/demo.js 中</p>
+        <p>相关mock接口都 /mock/modules/demo.js 中</p>
+      </div>
       <!-- GTE -->
       <div class="demo-doc-block_title m-10">
         GTE & loading 示例
@@ -38,7 +42,7 @@ import {
   postDemoData,
   uploaderDemoData,
   loginFail
-} from "@/apis/demo";
+} from "@/apis/demo.js";
 export default {
   data() {
     return {
