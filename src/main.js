@@ -6,7 +6,7 @@ import store from "@/store";
 // 引入style
 import "@/style/base.less";
 
-// todo注册全局组件
+// 注册全局组件
 import CustomComponent from "./components";
 
 // 引入vant组件
