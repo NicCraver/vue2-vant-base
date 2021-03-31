@@ -35,6 +35,12 @@
           is-link
           @click="GoToPage('/Examples/Mixins')"
         />
+        <van-cell title="Lodash" is-link @click="GoToPage('/Examples/Lodash')" />
+        <van-cell title="404" is-link @click="GoToPage('123456789')" />
+        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
+        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
+        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
+        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
       </div>

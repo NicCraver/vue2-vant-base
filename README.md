@@ -11,6 +11,7 @@
 - [x] router
 - [x] filter
 - [x] mixins
+- [ ] Lodash
 - [x] 全局 base components
 - [x] 404
 - [ ] VConsole

@@ -21,18 +21,24 @@ export default [
     path: "/Examples/BaseComponents",
     name: "BaseComponents",
     component: () => import("@/Examples/BaseComponents/index.vue"),
-    meta: { title: "Axios" }
+    meta: { title: "BaseComponents" }
   },
   {
     path: "/Examples/Filters",
     name: "Filters",
     component: () => import("@/Examples/Filters/index.vue"),
-    meta: { title: "Axios" }
+    meta: { title: "Filters" }
   },
   {
     path: "/Examples/Mixins",
     name: "Mixins",
     component: () => import("@/Examples/Mixins/index.vue"),
-    meta: { title: "Axios" }
+    meta: { title: "Mixins" }
+  },
+  {
+    path: "/Examples/Lodash",
+    name: "Lodash",
+    component: () => import("@/Examples/Lodash/index.vue"),
+    meta: { title: "Lodash" }
   }
 ];
