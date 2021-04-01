@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-nav-bar
-      title="Directives 示例"
+      title="Directives 自定义指令 示例"
       left-arrow
       @click-left="$router.go(-1)"
     />
