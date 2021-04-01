@@ -54,14 +54,14 @@ export default {
     }, 1000),
     test2: _.throttle(function() {
       console.log(
-        "throttle （函数节流）限制目标函数调用的频率，比如：1s内不能调用2次。"
+        "throttle （函数节流）限制目标函数调用的频率，比如：1s内不能调用2次。应用于滚动、调整窗口size等"
       );
     }, 3000),
     debounce() {
-      this.search();
+      this.test();
     },
     throttle() {
-      this.search2();
+      this.test2();
     },
     cloneDeep() {
       let objA = { name: "brown" };
