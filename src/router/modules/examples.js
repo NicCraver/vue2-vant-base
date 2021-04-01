@@ -52,5 +52,11 @@ export default [
     name: "Decorators",
     component: () => import("@/Examples/Decorators/index.vue"),
     meta: { title: "Decorators" }
+  },
+  {
+    path: "/Examples/CssMixin",
+    name: "CssMixin",
+    component: () => import("@/Examples/CssMixin/index.vue"),
+    meta: { title: "CssMixin" }
   }
 ];

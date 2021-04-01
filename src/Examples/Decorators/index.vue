@@ -17,7 +17,6 @@
         Throttle
       </van-button>
     </div>
-    X
   </div>
 </template>
 

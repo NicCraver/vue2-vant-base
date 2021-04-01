@@ -50,8 +50,8 @@
           is-link
           @click="GoToPage('/Examples/Decorators')"
         />
+        <van-cell title="Css Mixin" is-link @click="GoToPage('/Examples/CssMixin')" />
         <van-cell title="404" is-link @click="GoToPage('123456789')" />
-        <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
         <van-cell title="Vuex" is-link @click="GoToPage('/Examples/Vuex')" />
