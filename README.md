@@ -2,7 +2,7 @@
 
 - [x] 移动端适配
 - [x] vant 自动按需引入组件
-- [ ] 内置装饰器
+- [x] 内置装饰器
 - [x] gzip 打包压缩代码
 - [x] 自动删除 console.log
 - [x] 二次封装 axios
@@ -60,6 +60,8 @@ yarn add babel-plugin-import -D
 vant 组件引入位置在 src\plugin\vant.js
 
 ### 内置装饰器
+
+代码示例在/src/Examples/Decorators
 
 ### gzip 打包压缩代码
 
