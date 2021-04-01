@@ -14,7 +14,7 @@
 - [x] Lodash
 - [x] 全局 base components
 - [x] 404
-- [ ] VConsole
+- [x] VConsole
 - [x] 自定义指令 Directives
 - [ ] 路由后退缓存 https://github.com/hezhongfeng/vue-page-stack
 - [ ] vue.config.js css
