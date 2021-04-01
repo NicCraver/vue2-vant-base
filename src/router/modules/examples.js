@@ -46,5 +46,11 @@ export default [
     name: "Directives",
     component: () => import("@/Examples/Directives/index.vue"),
     meta: { title: "Directives" }
+  },
+  {
+    path: "/Examples/Decorators",
+    name: "Decorators",
+    component: () => import("@/Examples/Decorators/index.vue"),
+    meta: { title: "Decorators" }
   }
 ];
