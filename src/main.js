@@ -17,6 +17,12 @@ if (process.env.VUE_APP_MOCK && process.env.NODE_ENV === "development") {
   require("../mock");
 }
 
+// 开发环境下面使用vConsole进行调试
+// if (process.env.NODE_ENV === 'development') {
+//   const VConsole = require('vconsole')
+//   new VConsole()
+// }
+
 // 注册全局 filters
 import filters from "@/filters";
 filters(Vue);
@@ -24,8 +30,10 @@ filters(Vue);
 // 注册全局自定义指令
 import "@/directives";
 
+// log
 import { printANSI } from "@/utils/screenLog";
 printANSI();
+
 Vue.use(CustomComponent, {});
 
 Vue.config.productionTip = false;
