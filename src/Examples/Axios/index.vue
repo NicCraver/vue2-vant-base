@@ -68,10 +68,6 @@ export default {
     async allLoadData() {
       try {
         const [get, post] = await Promise.all([getDemoData(), postDemoData()]);
-        console.group("allLoadData");
-        console.log(`get`, get);
-        console.log(`post`, post);
-        console.groupEnd();
       } catch (error) {
         console.error(`error`, error);
       }
@@ -80,7 +76,6 @@ export default {
       this.$toast.loading("加载中...");
       try {
         const res = await getDemoData();
-        console.log(`getFun`, res);
       } catch (error) {
         console.error(`error`, error);
       } finally {
@@ -91,7 +86,6 @@ export default {
     async postFun() {
       try {
         const res = await postDemoData({ id: 42 });
-        console.log(`postFun`, res);
       } catch (error) {
         console.error(`error`, error);
       }
@@ -99,7 +93,6 @@ export default {
     async loginFailFun() {
       try {
         const res = await loginFail();
-        console.log(`loginFailFun`, res);
       } catch (error) {
         console.error(`error`, error);
       }
