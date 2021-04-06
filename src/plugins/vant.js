@@ -7,7 +7,9 @@ import {
   Uploader,
   Divider,
   Tab,
-  Tabs
+  Tabs,
+  List,
+  Field
 } from "vant";
 
 // toast loading 设置
@@ -21,4 +23,6 @@ Vue.use(Cell)
   .use(Divider)
   .use(Tab)
   .use(Tabs)
+  .use(Field)
+  .use(List)
   .use(Uploader);
