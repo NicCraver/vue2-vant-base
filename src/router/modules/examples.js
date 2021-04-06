@@ -58,5 +58,11 @@ export default [
     name: "CssMixin",
     component: () => import("@/Examples/CssMixin/index.vue"),
     meta: { title: "CssMixin" }
+  },
+  {
+    path: "/Examples/VantList",
+    name: "VantList",
+    component: () => import("@/Examples/VantList/index.vue"),
+    meta: { title: "VantList" }
   }
 ];
