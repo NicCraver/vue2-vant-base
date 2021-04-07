@@ -9,6 +9,7 @@ import {
   Tab,
   Tabs,
   List,
+  Form,
   Field
 } from "vant";
 
@@ -25,4 +26,5 @@ Vue.use(Cell)
   .use(Tabs)
   .use(Field)
   .use(List)
+  .use(Form)
   .use(Uploader);
