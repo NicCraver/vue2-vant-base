@@ -15,6 +15,8 @@ import {
 
 // toast loading 设置
 // duration	展示时长(ms)，值为 0 时，toast 不会消失
+// 触发 this.$toast.loading("加载中...");
+// 关闭 this.$toast.clear();
 Toast.setDefaultOptions("loading", { forbidClick: true, duration: 0 });
 
 Vue.use(Cell)
