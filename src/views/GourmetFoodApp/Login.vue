@@ -5,18 +5,12 @@
     </header>
     <main class="login_main">
       <van-form @submit="onSubmit">
-        <van-field
-          v-model="username"
-          name="Email"
-          label="Email"
-          :rules="[{ required: true, message: '请填写用户名' }]"
-        />
+        <van-field v-model="username" name="Email" label="Email" />
         <van-field
           v-model="password"
           type="password"
           name="Password"
           label="Password"
-          :rules="[{ required: true, message: '请填写密码' }]"
         />
         <div class="login_forgot">Forgot password?</div>
         <div class="btn">
@@ -28,7 +22,7 @@
     </main>
     <footer class="login_footer">
       <span>Already have an account?</span>
-      <span class="m-l-20">Sign In</span>
+      <span class="m-l-20">Sign Un</span>
     </footer>
   </div>
 </template>

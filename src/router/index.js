@@ -27,13 +27,6 @@ routes.push(
       component: Home,
       meta: { title: "Home" }
     },
-    {
-      path: "/GourmetFood/Login",
-      name: "Login",
-      component: () => import("@/views/GourmetFoodApp/Login.vue"),
-      meta: { title: "Login" }
-    },
-
     // 404 页面路由
     {
       path: "*",
