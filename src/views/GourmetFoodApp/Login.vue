@@ -18,6 +18,7 @@
           label="Password"
           :rules="[{ required: true, message: '请填写密码' }]"
         />
+        <div class="login_forgot">Forgot password?</div>
         <div class="btn">
           <van-button round block type="info" native-type="submit">
             {{ pageTitle }}
@@ -78,13 +79,21 @@ export default {
     width: 90%;
     box-sizing: border-box;
     margin-top: 114px;
-    height: 160px;
+    height: 185px;
     opacity: 1;
     background: #ffffff;
     border-radius: 0 22px 22px 0;
     padding: 20px 20px 20px 0;
+    .login_forgot {
+      font-size: 13px;
+      font-family: SFProText-Medium;
+      text-align: left;
+      color: #b1b2b8;
+      line-height: 18px;
+      padding: 15px 0 10px 15px;
+    }
     .btn {
-      margin-top: 30px;
+      margin-top: 10px;
       width: 88%;
       .van-button {
         border-radius: 0 25px 25px 0;
