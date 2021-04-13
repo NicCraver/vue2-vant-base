@@ -11,4 +11,10 @@ export default [
     component: () => import("@/views/GourmetFoodApp/SignUp.vue"),
     meta: { title: "SignUp" }
   },
+  {
+    path: "/GourmetFood/Home",
+    name: "GFHome",
+    component: () => import("@/views/GourmetFoodApp/Home.vue"),
+    meta: { title: "Home" }
+  }
 ];
