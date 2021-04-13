@@ -1,34 +1,30 @@
 <template>
   <div class="signup">
     <header class="signup_header">
-      {{ pageTitle }}
+      Sign Up
     </header>
     <main class="signup_main">
       <van-form @submit="onSubmit">
-        <van-field
-          v-model="username"
-          name="Email"
-          label="Email"
-          :rules="[{ required: true, message: '请填写用户名' }]"
-        />
+        <van-field v-model="username" name="Username" label="Username" />
+        <van-field v-model="Email" name="Email" label="Email" />
         <van-field
           v-model="password"
           type="password"
           name="Password"
           label="Password"
-          :rules="[{ required: true, message: '请填写密码' }]"
         />
-        <div class="signup_forgot">Forgot password?</div>
         <div class="btn">
           <van-button round block type="info" native-type="submit">
-            {{ pageTitle }}
+            Sign Up
           </van-button>
         </div>
       </van-form>
     </main>
     <footer class="signup_footer">
       <span>Already have an account?</span>
-      <span class="m-l-20">Sign In</span>
+      <span class="m-l-20" @click="$router.push('/GourmetFood/Login')">
+        Sign In
+      </span>
     </footer>
   </div>
 </template>
@@ -37,16 +33,11 @@
 export default {
   data() {
     return {
-      // 0 登录 1 注册
-      pageStatus: 0,
       username: "",
-      password: ""
+      Email: "",
+      password: "",
+      confirmPassword: ""
     };
-  },
-  computed: {
-    pageTitle() {
-      return this.pageStatus === 0 ? "Sign In" : "Sign Up";
-    }
   },
   methods: {
     onSubmit(values) {

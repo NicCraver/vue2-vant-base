@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <header class="login_header">
-      {{ pageTitle }}
+      Sign In
     </header>
     <main class="login_main">
       <van-form @submit="onSubmit">
@@ -15,14 +15,16 @@
         <div class="login_forgot">Forgot password?</div>
         <div class="btn">
           <van-button round block type="info" native-type="submit">
-            {{ pageTitle }}
+            Sign In
           </van-button>
         </div>
       </van-form>
     </main>
     <footer class="login_footer">
       <span>Already have an account?</span>
-      <span class="m-l-20">Sign Un</span>
+      <span class="m-l-20" @click="$router.push('/GourmetFood/SignUp')">
+        Sign Un
+      </span>
     </footer>
   </div>
 </template>
@@ -31,20 +33,14 @@
 export default {
   data() {
     return {
-      // 0 登录 1 注册
-      pageStatus: 0,
-      username: "",
-      password: ""
+      username: "123@qq.com",
+      password: "123456"
     };
-  },
-  computed: {
-    pageTitle() {
-      return this.pageStatus === 0 ? "Sign In" : "Sign Up";
-    }
   },
   methods: {
     onSubmit(values) {
       console.log("submit", values);
+      this.$router.push("/GourmetFood/Home");
     }
   }
 };
