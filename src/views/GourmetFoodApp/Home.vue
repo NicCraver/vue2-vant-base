@@ -36,9 +36,7 @@
           <div class="text">Grilled</div>
         </div>
       </div>
-      <div class="signboard">
-
-      </div>
+      <div class="signboard"></div>
     </main>
   </div>
 </template>
@@ -112,6 +110,15 @@ export default {};
           width: 23px;
         }
       }
+    }
+    .signboard {
+      margin: 0 18px;
+      height: 340px;
+      opacity: 1;
+      border-radius: 14px;
+      background: #1b2749;
+      background: url("../../assets/FoodExample/Home@2x.png") no-repeat;
+      background-size: 100%;
     }
   }
 }
