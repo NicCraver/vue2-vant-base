@@ -6,6 +6,7 @@
 - [x] gzip 打包压缩代码
 - [x] 自动删除 console.log
 - [x] 二次封装 axios
+- [ ] CssMixin
 - [x] mock
 - [x] store
 - [x] router
