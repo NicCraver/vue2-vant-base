@@ -102,5 +102,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import "../demo.less";
+@import "~@/Examples/demo.less";
 </style>
